@@ -20,13 +20,7 @@ class Genre
   end
 
   def artists
-    artists = []
-    songs.each do |song|
-      if !artists.include?(song.artist)
-        artists << song.artist
-      end
-    end
-    artists
+    @songs.collect {|s| s.artist}.uniq
   end
 
   def self.all
